@@ -9,13 +9,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="David Hounyo — Industrial Designer and Design Researcher">
 <meta property="og:description" content="Industrial designer and design researcher in Atlanta. Research-driven design for people others overlook.">
-<meta property="og:image" content="https://davidhounyo.github.io/og.png">
+<meta property="og:image" content="https://davidhyo.github.io/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:url" content="https://davidhounyo.github.io/">
+<meta property="og:url" content="https://davidhyo.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="David Hounyo — Industrial Designer and Design Researcher">
 <meta name="twitter:description" content="Industrial designer and design researcher in Atlanta. Research-driven design for people others overlook.">
-<meta name="twitter:image" content="https://davidhounyo.github.io/og.png">
+<meta name="twitter:image" content="https://davidhyo.github.io/og.png">
 <meta name="theme-color" content="#0B1B3F">
 </head>
 <body>
@@ -435,6 +435,7 @@ figcaption,.pnote,.hero-credit{font-size:14.5px!important;line-height:1.5}
 footer,footer span{font-size:14px!important}
 .top{border-bottom:0!important}
 .about p{text-wrap:pretty}
+@media (max-width:480px){nav[aria-label="Main"]{gap:12px!important;flex-wrap:nowrap!important}nav[aria-label="Main"] a{font-size:14px!important;white-space:nowrap}}
 /* about: big environmental photo, grouped facts */
 .about{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;column-gap:clamp(32px,6vw,96px)!important;align-items:start}
 .aside{display:contents}
@@ -474,7 +475,7 @@ footer,footer span{font-size:14px!important}
 <div class="page">
 <header class="top"><div class="wrap">
   <a class="mark" href="#work">DAVID HOUNYO</a>
-  <nav aria-label="Main"><a href="#work">Work</a><a href="#more-work">More work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <nav aria-label="Main"><a href="#work">Work</a><a href="#more-work">More work</a><a href="#about">About</a><a href="https://drive.google.com/file/d/1CDRrCGkyC5tnV-Dx_FVpQBIZDIOWtjtO/view" target="_blank" rel="noopener">Resume</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main>
@@ -540,7 +541,7 @@ footer,footer span{font-size:14px!important}
         <p class="eyebrow" style="color:var(--gold)">Don't be a stranger.</p>
         <p>Tell me about the problem your team is working on. I'll write back.</p>
         <a class="addr" id="addr" href="mailto:hounyod@gmail.com?subject=Hello%20from%20your%20portfolio&amp;body=Hi%20David%2C%0D%0A%0D%0A">hounyod@gmail.com</a>
-        <div class="row"><button class="btn gold" id="copy" type="button">Copy email</button><a class="btn line" href="https://www.linkedin.com/in/hounyo" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+        <div class="row"><a class="btn gold" href="https://drive.google.com/file/d/1CDRrCGkyC5tnV-Dx_FVpQBIZDIOWtjtO/view" target="_blank" rel="noopener">Resume (PDF) ↗</a><a class="btn line" href="https://www.linkedin.com/in/hounyo" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         <p class="toast" id="toast" role="status"></p>
       </div>
     </div>
@@ -974,7 +975,7 @@ footer,footer span{font-size:14px!important}
   tb.forEach(function(b){b.addEventListener('click',function(){root.setAttribute('data-tiles',b.dataset.t);tb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});});});
 
   var btn=document.getElementById('copy'),addr=document.getElementById('addr'),toast=document.getElementById('toast');
-  btn.addEventListener('click',function(){
+  btn&&btn.addEventListener('click',function(){
     var text=addr.textContent.trim();
     function fallback(){var r=document.createRange();r.selectNodeContents(addr);var s=getSelection();s.removeAllRanges();s.addRange(r);toast.textContent='Email selected. Press Ctrl+C or Cmd+C to copy.';}
     try{navigator.clipboard.writeText(text).then(function(){toast.textContent='Email copied.';},fallback);}catch(e){fallback();}
